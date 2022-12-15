@@ -15,6 +15,11 @@
             this.tvS = this.owner.getChildByName("tvvalue");
             this.tvS.text = "鑫荣活了：" + window.liveTime + "秒";
             window.liveTime = 0;
+            var bt = this.owner.getChildByName("bt");
+            bt.clickHandler = new Laya.Handler(this, this.onClickButton, [bt]);
+        }
+        onClickButton(button) {
+            Laya.Scene.open("main.scene", true);
         }
         onEnable() {
         }
