@@ -32,6 +32,8 @@
             this.dDown = false;
             this.spaceDown = false;
             this.liveStart = 0;
+            this.lastTx = 0;
+            this.lastTy = 0;
         }
         onAwake() {
             this.lab = this.owner;
@@ -42,6 +44,12 @@
         onEnable() {
         }
         onDisable() {
+        }
+        onStageMouseMove(e) {
+            if (this.lastTx == 0 && this.lastTy == 0) {
+            }
+            this.lab.x = e.stageX;
+            this.lab.y = e.stageY;
         }
         onKeyDown(e) {
             switch (e.keyCode) {
